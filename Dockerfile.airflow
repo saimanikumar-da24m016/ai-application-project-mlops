@@ -1,0 +1,16 @@
+# Dockerfile.airflow
+FROM apache/airflow:2.10.5-python3.9
+
+# Switch to the airflow user before installing Python packages
+USER airflow
+
+# Install what your DAGs need into the Airflow environment
+RUN pip install --no-cache-dir \
+      pillow \
+      mlflow \
+      pandas \
+      scikit-learn \
+      tensorflow \
+
+
+# (No need to switch back; the entrypoint will run as airflow)

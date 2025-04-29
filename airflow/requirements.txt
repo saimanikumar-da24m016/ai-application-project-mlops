@@ -1,2 +1,12 @@
+# for image resizing
 pillow
+
+# for manifest creation
+scikit-learn
+
+# for CSV handling in train
+pandas
+
+# for your custom CNN & mlflow logging
+tensorflow
 mlflow

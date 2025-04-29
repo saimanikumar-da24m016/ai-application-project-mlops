@@ -1,16 +1,11 @@
-version: '3.8'
-
+# docker-compose.dev.yml
 services:
-  # Build custom Airflow image once, with all requirements pre-installed
-  airflow-base:
+
+  # 1️⃣ Init (db + default user)
+  airflow-init:
     build:
       context: .
       dockerfile: Dockerfile.airflow
-    image: airflow-custom:latest
-
-  # One-off init uses the custom image
-  airflow-init:
-    image: airflow-custom:latest
     container_name: airflow-init
     restart: "no"
     environment:
@@ -20,15 +15,21 @@ services:
       PYTHONPATH: "/opt"
     volumes:
       - ./:/opt
+      - ./requirements-airflow.txt:/requirements.txt
     entrypoint: >
-      bash -c "airflow db init && \
-               airflow users create --username admin \
-                 --firstname Admin --lastname User --role Admin \
-                 --email admin@example.org || true"
+      bash -c "
+        airflow db init &&
+        airflow users create --username admin \
+          --firstname Admin --lastname User \
+          --role Admin --email admin@example.org \
+          --password admin || true
+      "
 
-  # Webserver
+  # 2️⃣ Webserver
   airflow-webserver:
-    image: airflow-custom:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
     container_name: airflow-web
     restart: always
     depends_on:
@@ -40,13 +41,17 @@ services:
       PYTHONPATH: "/opt"
     volumes:
       - ./:/opt
+      - ./requirements-airflow.txt:/requirements.txt
     ports:
       - "8080:8080"
-    command: airflow webserver
+    command: >
+      bash -c "airflow webserver"
 
-  # Scheduler
+  # 3️⃣ Scheduler
   airflow-scheduler:
-    image: airflow-custom:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
     container_name: airflow-sched
     restart: always
     depends_on:
@@ -55,9 +60,11 @@ services:
       PYTHONPATH: "/opt"
     volumes:
       - ./:/opt
-    command: airflow scheduler
+      - ./requirements-airflow.txt:/requirements.txt
+    command: >
+      bash -c "airflow scheduler"
 
-  # MLflow server
+  # 4️⃣ MLflow server
   mlflow:
     build: ./mlflow-server
     container_name: mlflow
@@ -65,9 +72,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./mlruns:/app/mlruns
+      - mlruns:/app/mlruns
 
-# Named volume for mlruns persistence
 volumes:
   mlruns:
-    driver: local

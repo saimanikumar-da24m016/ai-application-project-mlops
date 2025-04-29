@@ -2830,3 +2830,579 @@ ModuleNotFoundError: No module named 'sklearn'
 [2025-04-29T03:54:29.435+0000] {logging_mixin.py:190} INFO - [2025-04-29T03:54:29.433+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-04-29T03:54:29.489+0000] {logging_mixin.py:190} INFO - [2025-04-29T03:54:29.488+0000] {dag.py:4180} INFO - Setting next_dagrun for all_classification_pipeline to 2025-04-29 00:00:00+00:00, run_after=2025-04-30 00:00:00+00:00
 [2025-04-29T03:54:29.564+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 7.600 seconds
+[2025-04-29T04:57:00.214+0000] {processor.py:186} INFO - Started process (PID=25) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:57:00.217+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T04:57:00.221+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:57:00.220+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:57:00.374+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:57:00.276+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T04:57:00.378+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:57:00.441+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.243 seconds
+[2025-04-29T04:57:31.691+0000] {processor.py:186} INFO - Started process (PID=26) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:57:31.699+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T04:57:31.709+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:57:31.708+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:57:31.770+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:57:31.760+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T04:57:31.772+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:57:31.851+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.187 seconds
+[2025-04-29T04:58:03.524+0000] {processor.py:186} INFO - Started process (PID=27) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:58:03.529+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T04:58:03.533+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:58:03.532+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:58:03.616+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:58:03.603+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T04:58:03.620+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:58:03.732+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.225 seconds
+[2025-04-29T04:58:34.574+0000] {processor.py:186} INFO - Started process (PID=28) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:58:34.632+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T04:58:34.674+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:58:34.654+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:58:34.825+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:58:34.803+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T04:58:34.831+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:58:35.185+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.645 seconds
+[2025-04-29T04:59:05.594+0000] {processor.py:186} INFO - Started process (PID=29) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:59:05.598+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T04:59:05.602+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:59:05.601+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:59:05.649+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:59:05.642+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T04:59:05.651+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:59:05.712+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.142 seconds
+[2025-04-29T04:59:36.511+0000] {processor.py:186} INFO - Started process (PID=30) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:59:36.515+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T04:59:36.519+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:59:36.518+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:59:36.573+0000] {logging_mixin.py:190} INFO - [2025-04-29T04:59:36.557+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T04:59:36.578+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T04:59:36.654+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.164 seconds
+[2025-04-29T05:00:07.667+0000] {processor.py:186} INFO - Started process (PID=31) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:00:07.681+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:00:07.691+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:00:07.689+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:00:07.769+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:00:07.760+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:00:07.773+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:00:07.863+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.256 seconds
+[2025-04-29T05:00:38.441+0000] {processor.py:186} INFO - Started process (PID=32) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:00:38.442+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:00:38.444+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:00:38.444+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:00:38.490+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:00:38.483+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:00:38.492+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:00:38.576+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.146 seconds
+[2025-04-29T05:01:09.590+0000] {processor.py:186} INFO - Started process (PID=33) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:01:09.629+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:01:09.690+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:01:09.675+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:01:11.440+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:01:11.031+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:01:11.602+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:01:14.051+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 4.503 seconds
+[2025-04-29T05:01:44.713+0000] {processor.py:186} INFO - Started process (PID=34) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:01:44.715+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:01:44.730+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:01:44.725+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:01:44.791+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:01:44.779+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:01:44.796+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:01:44.891+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.199 seconds
+[2025-04-29T05:02:15.894+0000] {processor.py:186} INFO - Started process (PID=35) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:02:15.900+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:02:15.911+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:02:15.911+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:02:15.986+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:02:15.973+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:02:15.990+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:02:16.058+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.190 seconds
+[2025-04-29T05:02:46.700+0000] {processor.py:186} INFO - Started process (PID=36) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:02:46.703+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:02:46.707+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:02:46.706+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:02:46.768+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:02:46.757+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:02:46.774+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:02:46.842+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.151 seconds
+[2025-04-29T05:03:17.342+0000] {processor.py:186} INFO - Started process (PID=37) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:03:17.344+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:03:17.346+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:03:17.346+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:03:17.388+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:03:17.381+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:03:17.390+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:03:17.439+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.107 seconds
+[2025-04-29T05:03:47.618+0000] {processor.py:186} INFO - Started process (PID=38) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:03:47.619+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:03:47.621+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:03:47.621+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:03:47.660+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:03:47.653+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:03:47.663+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:03:47.707+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.097 seconds
+[2025-04-29T05:04:19.405+0000] {processor.py:186} INFO - Started process (PID=39) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:04:19.455+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:04:19.491+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:04:19.468+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:04:19.953+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:04:19.919+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:04:19.976+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:04:20.201+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.976 seconds
+[2025-04-29T05:04:51.130+0000] {processor.py:186} INFO - Started process (PID=40) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:04:51.132+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:04:51.134+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:04:51.134+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:04:51.187+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:04:51.178+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:04:51.190+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:04:51.242+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.128 seconds
+[2025-04-29T05:06:14.569+0000] {processor.py:186} INFO - Started process (PID=26) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:06:14.573+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:06:14.576+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:06:14.576+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:06:14.620+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:06:14.609+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:06:14.623+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:06:14.686+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.125 seconds
+[2025-04-29T05:06:45.799+0000] {processor.py:186} INFO - Started process (PID=27) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:06:45.986+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:06:46.255+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:06:46.216+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:06:46.436+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:06:46.429+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:06:46.439+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:06:46.616+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 1.713 seconds
+[2025-04-29T05:07:20.448+0000] {processor.py:186} INFO - Started process (PID=28) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:07:20.454+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:07:20.483+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:07:20.472+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:07:21.679+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:07:21.427+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:07:21.732+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:07:22.469+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 2.055 seconds
+[2025-04-29T05:07:53.139+0000] {processor.py:186} INFO - Started process (PID=29) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:07:53.152+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:07:53.176+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:07:53.174+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:07:53.262+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:07:53.250+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:07:53.266+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:07:53.458+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.443 seconds
+[2025-04-29T05:08:23.958+0000] {processor.py:186} INFO - Started process (PID=30) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:08:23.959+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:08:23.991+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:08:23.990+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:08:24.067+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:08:24.055+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:08:24.072+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:08:24.220+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.270 seconds
+[2025-04-29T05:08:55.366+0000] {processor.py:186} INFO - Started process (PID=31) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:08:55.368+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:08:55.383+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:08:55.381+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:08:55.453+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:08:55.443+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:08:55.456+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:08:55.689+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.391 seconds
+[2025-04-29T05:09:26.021+0000] {processor.py:186} INFO - Started process (PID=32) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:09:26.026+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:09:26.034+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:09:26.033+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:09:26.083+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:09:26.074+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:09:26.086+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:09:26.153+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.176 seconds
+[2025-04-29T05:09:56.929+0000] {processor.py:186} INFO - Started process (PID=33) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:09:56.930+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:09:56.933+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:09:56.933+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:09:56.976+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:09:56.969+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:09:56.978+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:09:57.058+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.142 seconds
+[2025-04-29T05:10:28.075+0000] {processor.py:186} INFO - Started process (PID=34) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:10:28.095+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:10:28.103+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:10:28.101+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:10:28.337+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:10:28.291+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:10:28.349+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:10:28.689+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.661 seconds
+[2025-04-29T05:10:58.936+0000] {processor.py:186} INFO - Started process (PID=35) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:10:58.941+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:10:58.948+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:10:58.948+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:10:59.021+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:10:59.007+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:10:59.024+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:10:59.088+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.178 seconds
+[2025-04-29T05:11:29.784+0000] {processor.py:186} INFO - Started process (PID=36) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:11:29.785+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:11:29.789+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:11:29.789+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:11:29.839+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:11:29.833+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:11:29.842+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:11:29.884+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.108 seconds
+[2025-04-29T05:12:00.682+0000] {processor.py:186} INFO - Started process (PID=37) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:12:00.683+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:12:00.687+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:12:00.686+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:12:00.727+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:12:00.720+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:12:00.729+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:12:00.766+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.093 seconds
+[2025-04-29T05:12:31.616+0000] {processor.py:186} INFO - Started process (PID=38) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:12:31.617+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:12:31.620+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:12:31.620+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:12:31.660+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:12:31.653+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:12:31.663+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:12:31.706+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.099 seconds
+[2025-04-29T05:13:02.278+0000] {processor.py:186} INFO - Started process (PID=39) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:13:02.280+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:13:02.287+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:13:02.285+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:13:02.348+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:13:02.341+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:13:02.350+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:13:02.394+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 0.128 seconds
+[2025-04-29T05:13:34.073+0000] {processor.py:186} INFO - Started process (PID=40) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:13:34.100+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:13:34.141+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:13:34.140+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:13:34.750+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:13:34.616+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 9, in <module>
+    from scripts.preprocess import resize_images
+  File "/opt/scripts/preprocess.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+[2025-04-29T05:13:34.792+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:13:35.234+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 1.298 seconds
+[2025-04-29T05:18:39.790+0000] {processor.py:186} INFO - Started process (PID=27) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:18:39.793+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:18:39.795+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:18:39.795+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:18:45.781+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:18:45.770+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 11, in <module>
+    from scripts.train_classifier import train_classifier
+  File "/opt/scripts/train_classifier.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+[2025-04-29T05:18:45.786+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:18:45.833+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 6.050 seconds
+[2025-04-29T05:19:16.333+0000] {processor.py:186} INFO - Started process (PID=36) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:19:16.339+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:19:16.346+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:19:16.346+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:19:21.793+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:19:21.781+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 11, in <module>
+    from scripts.train_classifier import train_classifier
+  File "/opt/scripts/train_classifier.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+[2025-04-29T05:19:21.797+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:19:21.851+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 5.537 seconds
+[2025-04-29T05:19:58.323+0000] {processor.py:186} INFO - Started process (PID=45) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:19:58.364+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:19:58.406+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:19:58.402+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:20:07.185+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:20:07.176+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 11, in <module>
+    from scripts.train_classifier import train_classifier
+  File "/opt/scripts/train_classifier.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+[2025-04-29T05:20:07.189+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:20:07.245+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 9.067 seconds
+[2025-04-29T05:20:37.640+0000] {processor.py:186} INFO - Started process (PID=54) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:20:37.641+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:20:37.646+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:20:37.645+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:20:40.254+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:20:40.242+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 11, in <module>
+    from scripts.train_classifier import train_classifier
+  File "/opt/scripts/train_classifier.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+[2025-04-29T05:20:40.258+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:20:40.305+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 2.679 seconds
+[2025-04-29T05:21:10.646+0000] {processor.py:186} INFO - Started process (PID=63) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:21:10.648+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T05:21:10.651+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:21:10.650+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:21:12.791+0000] {logging_mixin.py:190} INFO - [2025-04-29T05:21:12.782+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 11, in <module>
+    from scripts.train_classifier import train_classifier
+  File "/opt/scripts/train_classifier.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+[2025-04-29T05:21:12.794+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T05:21:12.824+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 2.184 seconds
