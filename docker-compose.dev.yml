@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  # Build custom Airflow image once, with all requirements pre-installed
+  airflow-base:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    image: airflow-custom:latest
+
+  # One-off init uses the custom image
+  airflow-init:
+    image: airflow-custom:latest
+    container_name: airflow-init
+    restart: "no"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      PYTHONPATH: "/opt"
+    volumes:
+      - ./:/opt
+    entrypoint: >
+      bash -c "airflow db init && \
+               airflow users create --username admin \
+                 --firstname Admin --lastname User --role Admin \
+                 --email admin@example.org || true"
+
+  # Webserver
+  airflow-webserver:
+    image: airflow-custom:latest
+    container_name: airflow-web
+    restart: always
+    depends_on:
+      - airflow-init
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      PYTHONPATH: "/opt"
+    volumes:
+      - ./:/opt
+    ports:
+      - "8080:8080"
+    command: airflow webserver
+
+  # Scheduler
+  airflow-scheduler:
+    image: airflow-custom:latest
+    container_name: airflow-sched
+    restart: always
+    depends_on:
+      - airflow-webserver
+    environment:
+      PYTHONPATH: "/opt"
+    volumes:
+      - ./:/opt
+    command: airflow scheduler
+
+  # MLflow server
+  mlflow:
+    build: ./mlflow-server
+    container_name: mlflow
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/app/mlruns
+
+# Named volume for mlruns persistence
+volumes:
+  mlruns:
+    driver: local

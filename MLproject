@@ -1,0 +1,26 @@
+name: ALL_Classifier
+
+conda_env: conda.yaml
+
+entry_points:
+  prepare_data:
+    parameters:
+      raw_dir:   {type: str}
+      out_dir:   {type: str}
+    command: >
+      python scripts/prepare_data.py
+        --raw_dir {raw_dir}
+        --out_dir {out_dir}
+
+  train_classifier:
+    parameters:
+      data_dir:      {type: str}
+      model_output:  {type: str}
+      epochs:        {type: int, default: 10}
+      batch_size:    {type: int, default: 32}
+    command: >
+      python scripts/train_classifier.py
+        --data_dir {data_dir}
+        --model_output {model_output}
+        --epochs {epochs}
+        --batch_size {batch_size}
