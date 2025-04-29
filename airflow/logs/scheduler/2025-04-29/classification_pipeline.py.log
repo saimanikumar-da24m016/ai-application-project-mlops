@@ -3995,3 +3995,82 @@ Please take a look at these docs to improve your DAG import time:
 [2025-04-29T06:32:40.228+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:32:40.227+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-04-29T06:32:40.280+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:32:40.279+0000] {dag.py:4180} INFO - Setting next_dagrun for all_classification_pipeline to 2025-04-29 00:00:00+00:00, run_after=2025-04-30 00:00:00+00:00
 [2025-04-29T06:32:40.432+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 13.152 seconds
+[2025-04-29T06:33:13.292+0000] {processor.py:186} INFO - Started process (PID=1039) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:33:13.323+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T06:33:13.346+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:33:13.344+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:33:43.925+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:33:43.923+0000] {timeout.py:68} ERROR - Process timed out, PID: 1039
+[2025-04-29T06:33:48.026+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:33:43.946+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/inspect.py", line 2283, in _signature_from_callable
+    sig = obj.__signature__
+AttributeError: 'function' object has no attribute '__signature__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 11, in <module>
+    from scripts.train_classifier import train_classifier
+  File "/opt/scripts/train_classifier.py", line 4, in <module>
+    import tensorflow as tf
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/__init__.py", line 49, in <module>
+    from tensorflow._api.v2 import __internal__
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/__init__.py", line 11, in <module>
+    from tensorflow._api.v2.__internal__ import distribute
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/distribute/__init__.py", line 8, in <module>
+    from tensorflow._api.v2.__internal__.distribute import combinations
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/distribute/combinations/__init__.py", line 8, in <module>
+    from tensorflow.python.distribute.combinations import env # line: 456
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/distribute/combinations.py", line 33, in <module>
+    from tensorflow.python.distribute import collective_all_reduce_strategy
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/distribute/collective_all_reduce_strategy.py", line 26, in <module>
+    from tensorflow.python.distribute import cross_device_ops as cross_device_ops_lib
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/distribute/cross_device_ops.py", line 28, in <module>
+    from tensorflow.python.distribute import cross_device_utils
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/distribute/cross_device_utils.py", line 22, in <module>
+    from tensorflow.python.distribute import values as value_lib
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/distribute/values.py", line 23, in <module>
+    from tensorflow.python.distribute import distribute_lib
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/distribute/distribute_lib.py", line 205, in <module>
+    from tensorflow.python.data.ops import dataset_ops
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/data/__init__.py", line 21, in <module>
+    from tensorflow.python.data import experimental
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/data/experimental/__init__.py", line 99, in <module>
+    from tensorflow.python.data.experimental import service
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/data/experimental/service/__init__.py", line 419, in <module>
+    from tensorflow.python.data.experimental.ops.data_service_ops import distribute
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/data_service_ops.py", line 23, in <module>
+    from tensorflow.python.data.experimental.ops import compression_ops
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/compression_ops.py", line 16, in <module>
+    from tensorflow.python.data.util import structure
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/data/util/structure.py", line 32, in <module>
+    from tensorflow.python.ops.ragged import ragged_tensor
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/ops/ragged/__init__.py", line 28, in <module>
+    from tensorflow.python.ops.ragged import ragged_tensor
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/ops/ragged/ragged_tensor.py", line 40, in <module>
+    from tensorflow.python.ops import check_ops
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/ops/check_ops.py", line 1687, in <module>
+    def assert_shapes(shapes, data=None, summarize=None, message=None, name=None):
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 1281, in add_dispatch_support
+    return decorator(target)
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 1271, in decorator
+    op_dispatch_handler = tf_decorator.make_decorator(dispatch_target,
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/util/tf_decorator.py", line 163, in make_decorator
+    signature = inspect.signature(target)
+  File "/usr/local/lib/python3.9/inspect.py", line 3113, in signature
+    return Signature.from_callable(obj, follow_wrapped=follow_wrapped)
+  File "/usr/local/lib/python3.9/inspect.py", line 2862, in from_callable
+    return _signature_from_callable(obj, sigcls=cls,
+  File "/usr/local/lib/python3.9/inspect.py", line 2283, in _signature_from_callable
+    sig = obj.__signature__
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/classification_pipeline.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.5/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.5/best-practices.html#reducing-dag-complexity, PID: 1039
+[2025-04-29T06:33:48.095+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:33:50.163+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 37.110 seconds
