@@ -4088,3 +4088,64 @@ Please take a look at these docs to improve your DAG import time:
 Please take a look at these docs to improve your DAG import time:
 * https://airflow.apache.org/docs/apache-airflow/2.10.5/best-practices.html#top-level-python-code
 * https://airflow.apache.org/docs/apache-airflow/2.10.5/best-practices.html#reducing-dag-complexity, PID: 1048
+[2025-04-29T06:35:51.308+0000] {processor.py:925} INFO - DAG(s) 'all_classification_pipeline' retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:36:10.012+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:36:10.003+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-29T06:36:12.030+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:36:12.028+0000] {dag.py:4180} INFO - Setting next_dagrun for all_classification_pipeline to 2025-04-29 00:00:00+00:00, run_after=2025-04-30 00:00:00+00:00
+[2025-04-29T06:36:16.700+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 106.681 seconds
+[2025-04-29T06:36:59.125+0000] {processor.py:186} INFO - Started process (PID=1058) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:36:59.172+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T06:36:59.235+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:36:59.224+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:37:29.896+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:37:29.894+0000] {timeout.py:68} ERROR - Process timed out, PID: 1058
+[2025-04-29T06:37:30.141+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:37:29.916+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/classification_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/classification_pipeline.py", line 11, in <module>
+    from scripts.train_classifier import train_classifier
+  File "/opt/scripts/train_classifier.py", line 4, in <module>
+    import tensorflow as tf
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/__init__.py", line 49, in <module>
+    from tensorflow._api.v2 import __internal__
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/__init__.py", line 8, in <module>
+    from tensorflow._api.v2.__internal__ import autograph
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/autograph/__init__.py", line 8, in <module>
+    from tensorflow.python.autograph.core.ag_ctx import control_status_ctx # line: 34
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/autograph/core/ag_ctx.py", line 21, in <module>
+    from tensorflow.python.autograph.utils import ag_logging
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/autograph/utils/__init__.py", line 17, in <module>
+    from tensorflow.python.autograph.utils.context_managers import control_dependency_on_returns
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/autograph/utils/context_managers.py", line 20, in <module>
+    from tensorflow.python.ops import tensor_array_ops
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 42, in <module>
+    from tensorflow.python.ops import math_ops
+  File "/home/airflow/.local/lib/python3.9/site-packages/tensorflow/python/ops/math_ops.py", line 73, in <module>
+    from tensorflow.python.compat import compat as forward_compat
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 939, in get_code
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/classification_pipeline.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.5/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.5/best-practices.html#reducing-dag-complexity, PID: 1058
+[2025-04-29T06:37:30.158+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:37:31.110+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 32.141 seconds
+[2025-04-29T06:38:09.323+0000] {processor.py:186} INFO - Started process (PID=1067) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:38:09.341+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T06:38:09.355+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:38:09.353+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:38:23.304+0000] {processor.py:925} INFO - DAG(s) 'all_classification_pipeline' retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:38:23.647+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:38:23.646+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-29T06:38:23.721+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:38:23.720+0000] {dag.py:4180} INFO - Setting next_dagrun for all_classification_pipeline to 2025-04-29 00:00:00+00:00, run_after=2025-04-30 00:00:00+00:00
+[2025-04-29T06:38:23.962+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 14.698 seconds
+[2025-04-29T06:38:54.766+0000] {processor.py:186} INFO - Started process (PID=1077) to work on /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:38:54.771+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/classification_pipeline.py for tasks to queue
+[2025-04-29T06:38:54.785+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:38:54.784+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:39:05.652+0000] {processor.py:925} INFO - DAG(s) 'all_classification_pipeline' retrieved from /opt/airflow/dags/classification_pipeline.py
+[2025-04-29T06:39:05.717+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:39:05.716+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-29T06:39:05.793+0000] {logging_mixin.py:190} INFO - [2025-04-29T06:39:05.792+0000] {dag.py:4180} INFO - Setting next_dagrun for all_classification_pipeline to 2025-04-29 00:00:00+00:00, run_after=2025-04-30 00:00:00+00:00
+[2025-04-29T06:39:05.935+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/classification_pipeline.py took 11.206 seconds

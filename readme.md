@@ -1,3 +1,9 @@
+docker-compose -f docker-compose.dev.yml up --build -d
+
+
+
+
+
 ```
 project-root/
 ├── airflow/                          # Airflow DAGs & setup
