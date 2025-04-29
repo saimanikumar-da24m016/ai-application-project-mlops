@@ -1,0 +1,15 @@
+artifact_uri: file:///opt/airflow/mlruns/883013785715349691/57550419707247fa924693dd486d018c/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '883013785715349691'
+lifecycle_stage: active
+run_id: 57550419707247fa924693dd486d018c
+run_name: merciful-robin-889
+run_uuid: 57550419707247fa924693dd486d018c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745907665027
+status: 1
+tags: []
+user_id: airflow

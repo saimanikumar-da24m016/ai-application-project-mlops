@@ -37,7 +37,7 @@ with DAG(
         task_id="preprocess_images",
         python_callable=resize_images,
         op_kwargs={
-            "input_dir": "/opt/data/raw",
+            "input_dir": "/opt/data/raw/Original",
             "output_dir": "/opt/data/processed",
             "size": (224, 224),
         },
@@ -63,10 +63,11 @@ with DAG(
         op_kwargs={
             "data_dir": "/opt/data/processed_manifest",
             "model_output": "/opt/models/classifier",
-            "epochs": 10,
-            "batch_size": 32,
+            "epochs": 3,
+            "batch_size": 8,
         },
     )
+
 
     end = DummyOperator(task_id="end")
 
