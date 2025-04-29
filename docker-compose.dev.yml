@@ -1,7 +1,7 @@
 # docker-compose.dev.yml
 services:
 
-  # 1️⃣ Init (db + default user)
+  ## ── 1️⃣ Airflow Init (DB + Admin User) ────────────────────────────────────
   airflow-init:
     build:
       context: .
@@ -13,6 +13,7 @@ services:
       AIRFLOW__CORE__EXECUTOR: SequentialExecutor
       AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
       PYTHONPATH: "/opt"
+      MLFLOW_TRACKING_URI: "http://mlflow:5000"
     volumes:
       - ./:/opt
       - ./requirements-airflow.txt:/requirements.txt
@@ -25,7 +26,7 @@ services:
           --password admin || true
       "
 
-  # 2️⃣ Webserver
+  ## ── 2️⃣ Airflow Webserver ────────────────────────────────────────────────
   airflow-webserver:
     build:
       context: .
@@ -39,15 +40,15 @@ services:
       AIRFLOW__CORE__EXECUTOR: SequentialExecutor
       AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
       PYTHONPATH: "/opt"
+      MLFLOW_TRACKING_URI: "http://mlflow:5000"
     volumes:
       - ./:/opt
       - ./requirements-airflow.txt:/requirements.txt
     ports:
       - "8080:8080"
-    command: >
-      bash -c "airflow webserver"
+    command: bash -c "airflow webserver"
 
-  # 3️⃣ Scheduler
+  ## ── 3️⃣ Airflow Scheduler ───────────────────────────────────────────────
   airflow-scheduler:
     build:
       context: .
@@ -58,13 +59,13 @@ services:
       - airflow-webserver
     environment:
       PYTHONPATH: "/opt"
+      MLFLOW_TRACKING_URI: "http://mlflow:5000"
     volumes:
       - ./:/opt
       - ./requirements-airflow.txt:/requirements.txt
-    command: >
-      bash -c "airflow scheduler"
+    command: bash -c "airflow scheduler"
 
-  # 4️⃣ MLflow server
+  ## ── 4️⃣ MLflow Tracking Server ──────────────────────────────────────────
   mlflow:
     build: ./mlflow-server
     container_name: mlflow
@@ -73,6 +74,21 @@ services:
       - "5000:5000"
     volumes:
       - mlruns:/app/mlruns
+
+    ## ── 5️⃣ MLflow Model-Serving API ────────────────────────────────────────
+  mlflow-model-server:
+    build:
+      context: ./mlflow-model-server
+      dockerfile: Dockerfile
+    container_name: mlflow-model-server
+    restart: always
+    volumes:
+      - mlruns:/app/mlruns   # mount the same mlruns so it can read artifacts
+    ports:
+      - "1234:1234"
+    depends_on:
+      - mlflow
+
 
 volumes:
   mlruns:
