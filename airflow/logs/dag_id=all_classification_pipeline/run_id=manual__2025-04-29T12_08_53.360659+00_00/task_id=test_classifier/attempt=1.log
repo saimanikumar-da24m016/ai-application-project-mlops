@@ -1,0 +1,41 @@
+[2025-04-29T12:10:13.633+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-29T12:10:13.639+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: all_classification_pipeline.test_classifier manual__2025-04-29T12:08:53.360659+00:00 [queued]>
+[2025-04-29T12:10:13.644+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: all_classification_pipeline.test_classifier manual__2025-04-29T12:08:53.360659+00:00 [queued]>
+[2025-04-29T12:10:13.644+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-29T12:10:13.651+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): test_classifier> on 2025-04-29 12:08:53.360659+00:00
+[2025-04-29T12:10:13.656+0000] {standard_task_runner.py:72} INFO - Started process 488 to run task
+[2025-04-29T12:10:13.658+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'all_classification_pipeline', 'test_classifier', 'manual__2025-04-29T12:08:53.360659+00:00', '--job-id', '75', '--raw', '--subdir', 'DAGS_FOLDER/classification_pipeline.py', '--cfg-path', '/tmp/tmpdn5tx8ih']
+[2025-04-29T12:10:13.660+0000] {standard_task_runner.py:105} INFO - Job 75: Subtask test_classifier
+[2025-04-29T12:10:13.680+0000] {task_command.py:467} INFO - Running <TaskInstance: all_classification_pipeline.test_classifier manual__2025-04-29T12:08:53.360659+00:00 [running]> on host b4d54d1398d0
+[2025-04-29T12:10:13.721+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='all_classification_pipeline' AIRFLOW_CTX_TASK_ID='test_classifier' AIRFLOW_CTX_EXECUTION_DATE='2025-04-29T12:08:53.360659+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-29T12:08:53.360659+00:00'
+[2025-04-29T12:10:13.721+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-29T12:10:14.198+0000] {logging_mixin.py:190} INFO -       1/Unknown 0s 182ms/step - accuracy: 0.7500 - loss: 0.5962
+[2025-04-29T12:10:14.276+0000] {logging_mixin.py:190} INFO -       3/Unknown 0s 39ms/step - accuracy: 0.7986 - loss: 0.4695 
+[2025-04-29T12:10:14.357+0000] {logging_mixin.py:190} INFO -       5/Unknown 0s 40ms/step - accuracy: 0.8117 - loss: 0.4480
+[2025-04-29T12:10:14.433+0000] {logging_mixin.py:190} INFO -       7/Unknown 0s 39ms/step - accuracy: 0.8132 - loss: 0.4495
+[2025-04-29T12:10:14.517+0000] {logging_mixin.py:190} INFO -       9/Unknown 1s 40ms/step - accuracy: 0.8090 - loss: 0.4624
+[2025-04-29T12:10:14.594+0000] {logging_mixin.py:190} INFO -      11/Unknown 1s 40ms/step - accuracy: 0.8112 - loss: 0.4634
+[2025-04-29T12:10:14.664+0000] {logging_mixin.py:190} INFO -      13/Unknown 1s 39ms/step - accuracy: 0.8164 - loss: 0.4584
+[2025-04-29T12:10:14.732+0000] {logging_mixin.py:190} INFO -      15/Unknown 1s 38ms/step - accuracy: 0.8190 - loss: 0.4551
+[2025-04-29T12:10:14.801+0000] {logging_mixin.py:190} INFO -      17/Unknown 1s 38ms/step - accuracy: 0.8216 - loss: 0.4507
+[2025-04-29T12:10:14.867+0000] {logging_mixin.py:190} INFO -      19/Unknown 1s 37ms/step - accuracy: 0.8233 - loss: 0.4474
+[2025-04-29T12:10:14.937+0000] {logging_mixin.py:190} INFO -      21/Unknown 1s 37ms/step - accuracy: 0.8245 - loss: 0.4453
+[2025-04-29T12:10:15.004+0000] {logging_mixin.py:190} INFO -      23/Unknown 1s 37ms/step - accuracy: 0.8255 - loss: 0.4433
+[2025-04-29T12:10:15.069+0000] {logging_mixin.py:190} INFO -      25/Unknown 1s 36ms/step - accuracy: 0.8264 - loss: 0.4419
+[2025-04-29T12:10:15.137+0000] {logging_mixin.py:190} INFO -      27/Unknown 1s 36ms/step - accuracy: 0.8270 - loss: 0.4407
+[2025-04-29T12:10:15.211+0000] {logging_mixin.py:190} INFO -      29/Unknown 1s 36ms/step - accuracy: 0.8283 - loss: 0.4386
+[2025-04-29T12:10:15.292+0000] {logging_mixin.py:190} INFO -      31/Unknown 1s 36ms/step - accuracy: 0.8294 - loss: 0.4365
+[2025-04-29T12:10:15.372+0000] {logging_mixin.py:190} INFO -      33/Unknown 1s 37ms/step - accuracy: 0.8297 - loss: 0.4350
+[2025-04-29T12:10:15.456+0000] {logging_mixin.py:190} INFO -      35/Unknown 1s 37ms/step - accuracy: 0.8302 - loss: 0.4331
+[2025-04-29T12:10:15.529+0000] {logging_mixin.py:190} INFO -      37/Unknown 2s 37ms/step - accuracy: 0.8308 - loss: 0.4311
+[2025-04-29T12:10:15.597+0000] {logging_mixin.py:190} INFO -      39/Unknown 2s 37ms/step - accuracy: 0.8315 - loss: 0.4287
+[2025-04-29T12:10:15.654+0000] {logging_mixin.py:190} INFO -      41/Unknown 2s 36ms/step - accuracy: 0.8321 - loss: 0.4263
+[2025-04-29T12:10:15.659+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.9/site-packages/keras/src/trainers/epoch_iterator.py:151 UserWarning: Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches. You may need to use the `.repeat()` function when building your dataset.
+[2025-04-29T12:10:15.661+0000] {logging_mixin.py:190} INFO - 41/41 ━━━━━━━━━━━━━━━━━━━━ 2s 37ms/step - accuracy: 0.8324 - loss: 0.4253
+[2025-04-29T12:10:15.661+0000] {logging_mixin.py:190} INFO - 🧪 Test loss=0.3831, accuracy=0.8436
+[2025-04-29T12:10:15.661+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-29T12:10:15.665+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-29T12:10:15.666+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=all_classification_pipeline, task_id=test_classifier, run_id=manual__2025-04-29T12:08:53.360659+00:00, execution_date=20250429T120853, start_date=20250429T121013, end_date=20250429T121015
+[2025-04-29T12:10:15.708+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-29T12:10:15.722+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-29T12:10:15.723+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

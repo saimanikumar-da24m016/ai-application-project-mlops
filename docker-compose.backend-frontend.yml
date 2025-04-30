@@ -1,0 +1,99 @@
+version: "3.8"
+
+networks:
+  mlops-net:
+    driver: bridge
+
+volumes:
+  models:
+  feedback-db:
+  prometheus-data:
+  grafana-storage:
+
+services:
+  ############################################################
+  # 1) FastAPI backend (with Prometheus instrumentation)
+  ############################################################
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    volumes:
+      - ./models:/app/models
+      - feedback-db:/app/data      # <- mount volume at /app/data (a directory)
+    environment:
+      - MODEL_PATH=/app/models/classifier/classifier.weights.h5
+      - FEEDBACK_DIR=/app/data     # <- tell your app where to write the DB # persistent feedback DB
+    ports:
+      - "8000:8000"
+    restart: always
+    networks:
+      - mlops-net
+
+  ############################################################
+  # 2) Streamlit frontend
+  ############################################################
+  streamlit:
+    build:
+      context: ./frontend_streamlit
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "8501:8501"
+    restart: always
+    networks:
+      - mlops-net
+
+  ############################################################
+  # 3) Prometheus
+  ############################################################
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      # mount the *folder* so spaces in Windows paths don’t break it
+      - ./monitoring/prometheus:/etc/prometheus:ro
+      - prometheus-data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    ports:
+      - "9090:9090"
+    restart: always
+    networks:
+      - mlops-net
+
+  ############################################################
+  # 4) Node Exporter (host metrics)
+  ############################################################
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    pid: "host"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - --path.rootfs=/rootfs
+    restart: always
+    networks:
+      - mlops-net
+
+  ############################################################
+  # 5) Grafana
+  ############################################################
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+    ports:
+      - "3000:3000"
+    restart: always
+    networks:
+      - mlops-net

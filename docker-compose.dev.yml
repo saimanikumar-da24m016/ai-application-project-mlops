@@ -1,8 +1,11 @@
 # docker-compose.dev.yml
+version: '3.8'
+
 services:
 
   ## ── 1️⃣ Airflow Init (DB + Admin User) ────────────────────────────────────
   airflow-init:
+    user: root
     build:
       context: .
       dockerfile: Dockerfile.airflow
@@ -17,6 +20,7 @@ services:
     volumes:
       - ./:/opt
       - ./requirements-airflow.txt:/requirements.txt
+      - mlruns:/app/mlruns       # ← mount the shared mlruns here
     entrypoint: >
       bash -c "
         airflow db init &&
@@ -28,6 +32,7 @@ services:
 
   ## ── 2️⃣ Airflow Webserver ────────────────────────────────────────────────
   airflow-webserver:
+    user: root
     build:
       context: .
       dockerfile: Dockerfile.airflow
@@ -44,12 +49,14 @@ services:
     volumes:
       - ./:/opt
       - ./requirements-airflow.txt:/requirements.txt
+      - mlruns:/app/mlruns       # ← and here
     ports:
       - "8080:8080"
     command: bash -c "airflow webserver"
 
   ## ── 3️⃣ Airflow Scheduler ───────────────────────────────────────────────
   airflow-scheduler:
+    user: root
     build:
       context: .
       dockerfile: Dockerfile.airflow
@@ -63,32 +70,34 @@ services:
     volumes:
       - ./:/opt
       - ./requirements-airflow.txt:/requirements.txt
+      - mlruns:/app/mlruns       # ← and here as well
     command: bash -c "airflow scheduler"
 
   ## ── 4️⃣ MLflow Tracking Server ──────────────────────────────────────────
   mlflow:
+    user: root
     build: ./mlflow-server
     container_name: mlflow
     restart: always
     ports:
-      - "5000:5000"
+      - "5002:5000"
     volumes:
-      - mlruns:/app/mlruns
+      - mlruns:/app/mlruns      # ← same volume backing the server
 
-    ## ── 5️⃣ MLflow Model-Serving API ────────────────────────────────────────
+  ## ── 5️⃣ MLflow Model-Serving API ────────────────────────────────────────
   mlflow-model-server:
+    user: root
     build:
       context: ./mlflow-model-server
       dockerfile: Dockerfile
     container_name: mlflow-model-server
     restart: always
-    volumes:
-      - mlruns:/app/mlruns   # mount the same mlruns so it can read artifacts
-    ports:
-      - "1234:1234"
     depends_on:
       - mlflow
-
+    ports:
+      - "1234:1234"
+    volumes:
+      - mlruns:/app/mlruns      # ← so the serving API can read the artifacts
 
 volumes:
   mlruns:

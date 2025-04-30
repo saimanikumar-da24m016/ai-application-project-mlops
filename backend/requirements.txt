@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pillow
+numpy
+tensorflow==2.15.0          # CPU wheel
+prometheus-fastapi-instrumentator

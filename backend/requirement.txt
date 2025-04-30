@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-mlflow
-prometheus_client
-psutil
-apscheduler
-pillow

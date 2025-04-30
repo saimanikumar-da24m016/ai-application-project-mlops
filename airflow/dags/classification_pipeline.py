@@ -1,14 +1,15 @@
-from datetime import datetime, timedelta
-from pathlib import Path
+# dags/all_classification_pipeline.py
 
+from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.dummy import DummyOperator
 
-# import your preprocessing and manifest generation and training
-from scripts.preprocess import resize_images
-from scripts.prepare_data import make_manifest
+from scripts.preprocess       import resize_images
+from scripts.prepare_data     import make_manifest
 from scripts.train_classifier import train_classifier
+from scripts.test_classifier  import test_classifier
+from scripts.register_model   import register_model
 
 def default_args():
     return {
@@ -24,7 +25,7 @@ def default_args():
 with DAG(
     dag_id="all_classification_pipeline",
     default_args=default_args(),
-    description="Preprocess raw images, build manifests, train classifier",
+    description="Preprocess → manifest → train → test → register for serving",
     schedule_interval="@daily",
     catchup=False,
     tags=["ALL", "classification"],
@@ -32,7 +33,6 @@ with DAG(
 
     start = DummyOperator(task_id="start")
 
-    # 1️⃣ Preprocessing: resize raw images → data/processed
     preprocess = PythonOperator(
         task_id="preprocess_images",
         python_callable=resize_images,
@@ -43,7 +43,6 @@ with DAG(
         },
     )
 
-    # 2️⃣ Prepare data: generate train/val/test CSVs
     prepare = PythonOperator(
         task_id="prepare_data",
         python_callable=make_manifest,
@@ -56,19 +55,37 @@ with DAG(
         },
     )
 
-    # 3️⃣ Train classifier: logs to MLflow and saves under models/classifier
     train = PythonOperator(
         task_id="train_classifier",
         python_callable=train_classifier,
         op_kwargs={
             "data_dir": "/opt/data/processed_manifest",
             "model_output": "/opt/models/classifier",
-            "epochs": 3,
+            "epochs": 5,
+            "batch_size": 8,
+        },
+        # the returned run_id is pushed to XCom automatically
+    )
+
+    test = PythonOperator(
+        task_id="test_classifier",
+        python_callable=test_classifier,
+        op_kwargs={
+            "data_dir": "/opt/data/processed_manifest",
+            "run_id": "{{ ti.xcom_pull(task_ids='train_classifier') }}",
             "batch_size": 8,
         },
     )
 
+    register = PythonOperator(
+        task_id="register_model",
+        python_callable=register_model,
+        op_kwargs={
+            "run_id": "{{ ti.xcom_pull(task_ids='train_classifier') }}",
+            "model_name": "ALL_Classifier",
+        },
+    )
 
     end = DummyOperator(task_id="end")
 
-    start >> preprocess >> prepare >> train >> end
+    start >> preprocess >> prepare >> train >> test >> register >> end
