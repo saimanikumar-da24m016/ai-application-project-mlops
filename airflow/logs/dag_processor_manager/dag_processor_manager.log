@@ -6718,3 +6718,19 @@ File Path                                     PID    Runtime      # DAGs    # Er
 [2025-04-30T05:29:27.964+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
 [2025-04-30T05:29:27.967+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
 [2025-04-30T05:29:28.052+0000] {manager.py:824} INFO - There are 1 files in /opt/airflow/dags
+[2025-04-30T05:30:01.733+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+--------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/classification_pipeline.py                           0           1  31.68s          2025-04-30T05:30:01                       3
+================================================================================
+[2025-04-30T05:31:03.127+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+--------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/classification_pipeline.py                           0           1  30.79s          2025-04-30T05:31:03                       5
+================================================================================
