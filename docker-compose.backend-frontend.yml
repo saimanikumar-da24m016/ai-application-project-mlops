@@ -20,7 +20,7 @@ services:
       dockerfile: backend/Dockerfile
     volumes:
       - ./models:/app/models
-      - feedback-db:/app/data      # <- mount volume at /app/data (a directory)
+      - ./data:/app/data      # <- mount volume at /app/data (a directory)
     environment:
       - MODEL_PATH=/app/models/classifier/classifier.weights.h5
       - FEEDBACK_DIR=/app/data     # <- tell your app where to write the DB # persistent feedback DB
@@ -39,11 +39,14 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - backend
+    environment:
+      # This must include the full base URL including port but *not* the path
+      BACKEND_URL: "http://backend:8000"
     ports:
       - "8501:8501"
-    restart: always
     networks:
       - mlops-net
+    restart: always
 
   ############################################################
   # 3) Prometheus

@@ -1,5 +1,7 @@
 docker-compose -f docker-compose.dev.yml up --build -d
 
+docker-compose -f docker-compose.backend-frontend.yml up --build -d
+
 
 
 
